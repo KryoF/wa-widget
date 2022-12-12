@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>WhatsApp widget</title>
+  </head>
+  <body>
+    
+
+    <!--COPIAR Y PEGAR A PARTIR DE AQUÍ-->
+    <!--LIBRERIAS REQUERIDAS PARA EL FUNCIONAMIENTO DEL WIDGET-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
+    <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
+    <!--LIBRERIAS REQUERIDAS PARA EL FUNCIONAMIENTO DEL WIDGET-->
+
+    <!--Contenedor del Widget-->
+    <div id="WAButton"></div>
+    <!--Contenedor del Widget-->
+    
+    <!--A partir de aquí son las configuraciones basicas del widget-->
+    <style>
+      /*En esta clase se editan cosas como el tipo, grosor y color de la fuente del Popup*/
+      #WAButton {
+        font-family: Arial, Helvetica, sans-serif; 
+      }
+
+      /*Posición del Widget en Pantalla*/
+      .floating-wpp {
+        bottom: 130px !important;/*Posición del boton de abajo hacia arriba*/
+        right: 15px !important;/*Posición del boton con respecto al borde de la derecha*/
+      }
+      .floating-wpp:hover {
+        bottom: 140px !important;/*Posición del boton cuando le pasan el mouse por encima*/
+      }
+
+      /*Para que no haya problemas en los distintos tipos de pantallas se utlizan las @meida queries con las clases de arriba
+        Por ejemplo:
+        @media all and (max: width 768px;){
+          .floating-wpp {
+          bottom: 120px !important;
+          }
+          .floating-wpp:hover {
+            bottom: 125px !important;
+          }
+        }
+      */
+    </style>
+    <script >
+      $(function() {
+      $('#WAButton').floatingWhatsApp({
+        phone: '+521234567890', //SIN ESPACIOS: +52 + número de telefono a contactar
+
+        //Esta información solo es necesaria alimentarla en caso de activar 
+        headerTitle: 'UNIVA Guadalajara', //Popup Title
+        popupMessage: 'Gracias por contactar a UNIVA ¿Cómo podemos ayudarte?', //Popup Message
+        showPopup: false, //Enables popup display
+        //Fin
+
+        buttonImage: '<img src="whatsapp.png" />', //La imagen del boton en pantalla
+        //headerColor: 'crimson', //Custom header color
+        //backgroundColor: 'crimson', //Custom background button color
+        position: "right" //Posición en pantalla que va a tomar el widget, por default hasta el fondo
+      });
+      });
+    </script>
+    <!--Fin de las configuraciones basicas del widget-->
+    <!--COPIAR Y PEGAR A PARTIR DE AQUÍ-->
+
+
+  </body>
+</html>
